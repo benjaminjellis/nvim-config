@@ -1,5 +1,15 @@
 local M = {}
 
+M.general = {
+  n = {
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+  },
+  t = {
+    ["<leader>tc"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+  },
+}
+
+
 M.rtools = {
   plugin = true,
   n = {
