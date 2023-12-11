@@ -3,6 +3,10 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft <CR>", "window left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "window right" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "window down" }, 
+    ["<C-k<"] = { "<cmd> TmuxNavigateUp <CR>", "winsow up" }
   },
   t = {
     ["<leader>tc"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
