@@ -16,6 +16,7 @@ if not vim.loop.fs_stat(lazypath) then
   require("core.bootstrap").lazy(lazypath)
 end
 vim.wo.relativenumber = true
+vim.opt.swapfile = false
 vim.opt.spelllang = 'en_gb'
 vim.opt.spell = true
 dofile(vim.g.base46_cache .. "defaults")
