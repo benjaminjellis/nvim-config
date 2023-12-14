@@ -10,6 +10,20 @@ local plugins = {
     },
   },
   {
+  "folke/todo-comments.nvim",
+    lazy = false,
+    requires = { "nvim-lua/plenary.nvim" },
+    init = function()
+      require("core.utils").lazy_load "todo-comments.nvim"
+    end,
+    opts = function()
+      return require "plugins.configs.todocomments"
+    end,
+    config = function(_, opts)
+      require("todo-comments").setup(opts)
+    end,
+},
+  {
     "christoomey/vim-tmux-navigator",
     lazy = false
   },
@@ -18,6 +32,20 @@ local plugins = {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
+    end,
+  },
+  {
+    "folke/trouble.nvim",
+    lazy = false,
+    requires  = { "nvim-tree/nvim-web-devicons" },
+    init = function()
+      require("core.utils").lazy_load "trouble.nvim"
+    end,
+    opts = function()
+      return require "plugins.configs.trouble"
+    end,
+    config = function(_, opts)
+      require("trouble").setup(opts)
     end,
   },
   {
