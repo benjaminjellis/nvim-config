@@ -11,6 +11,29 @@ local plugins = {
       },
     },
   },
+  {
+    "nvim-neotest/neotest",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "rouge8/neotest-rust",
+      "nvim-neotest/neotest-plenary",
+      "folke/neodev.nvim"
+     },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-rust"),
+          require("neotest-plenary"),
+       },
+      })
+      require("neodev").setup({
+        library = { plugins = { "neotest" }, types = true },
+      })
+    end,
+  },
   -- {
   -- "folke/todo-comments.nvim",
   --   lazy = false,
@@ -31,11 +54,11 @@ local plugins = {
     "folke/trouble.nvim",
     ft = "rust",
     dependencies = { "nvim-tree/nvim-web-devicons" },
- opts = {
-  -- your configuration comes here
-  -- or leave it empty to use the default settings
-  -- refer to the configuration section below
- },
+    opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+   },
   },
   -- {
   --   "ionide/Ionide-vim",
