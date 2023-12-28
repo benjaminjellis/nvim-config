@@ -270,6 +270,7 @@ M.telescope = {
 
   n = {
     -- find
+    ["<leader>fr"] = { "<cmd> Telescope lsp_references <CR>", "Find references" },
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
