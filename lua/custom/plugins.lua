@@ -6,23 +6,16 @@ local plugins = {
     opts = {
       ensure_installed = {
         "rust-analyzer",
+        -- "marksman",
+        -- "html-lsp"
       },
     },
   },
-  {
-  "folke/todo-comments.nvim",
-    lazy = false,
-    requires = { "nvim-lua/plenary.nvim" },
-    init = function()
-      require("core.utils").lazy_load "todo-comments.nvim"
-    end,
-    opts = function()
-      return require "plugins.configs.todocomments"
-    end,
-    config = function(_, opts)
-      require("todo-comments").setup(opts)
-    end,
-},
+  -- {
+  -- "folke/todo-comments.nvim",
+  --   lazy = false,
+  --   requires = { "nvim-lua/plenary.nvim" },
+  -- },
   {
     "christoomey/vim-tmux-navigator",
     lazy = false
@@ -36,26 +29,21 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
-    lazy = false,
-    requires  = { "nvim-tree/nvim-web-devicons" },
-    init = function()
-      require("core.utils").lazy_load "trouble.nvim"
-    end,
-    opts = function()
-      return require "plugins.configs.trouble"
-    end,
-    config = function(_, opts)
-      require("trouble").setup(opts)
-    end,
+    ft = "rust",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+ opts = {
+  -- your configuration comes here
+  -- or leave it empty to use the default settings
+  -- refer to the configuration section below
+ },
   },
-  {
-    "ionide/Ionide-vim",
-    ft = "fsharp",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-    }
-
-  },
+  -- {
+  --   "ionide/Ionide-vim",
+  --   ft = "fsharp",
+  --   dependencies = {
+  --     "neovim/nvim-lspconfig",
+  --   }
+  -- },
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
