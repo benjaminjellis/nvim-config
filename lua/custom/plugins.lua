@@ -12,6 +12,14 @@ local plugins = {
     },
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      highlight = {
+        enable = false
+      }
+    }
+  },
+  {
     "nvim-neotest/neotest",
     lazy = false,
     dependencies = {
@@ -34,11 +42,11 @@ local plugins = {
       })
     end,
   },
-  -- {
-  -- "folke/todo-comments.nvim",
-  --   lazy = false,
-  --   requires = { "nvim-lua/plenary.nvim" },
-  -- },
+  {
+  "folke/todo-comments.nvim",
+    lazy = false,
+    requires = { "nvim-lua/plenary.nvim" },
+  },
   {
     "christoomey/vim-tmux-navigator",
     lazy = false
