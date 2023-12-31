@@ -13,8 +13,20 @@ M.general = {
       function()
         require("neotest").run.run(vim.fn.expand("%"));
       end,
-      "Find other"
+      "test all in this file"
     },
+    ["<leader>tn"] = {
+      function()
+        require("neotest").run.run();
+      end,
+      "test nearest"
+    },
+    ["<leader>to"] = {
+      function()
+        require("neotest").output_panel.open();
+      end,
+      "show test output"
+    }
   },
   t = {
     ["<leader>tc"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
