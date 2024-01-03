@@ -6,7 +6,7 @@ M.ui = {
   hl_override = {
     Operator = { fg = "vibrant_green" },
     Variable = { fg = "pink"},
-    SpellBad = {bg = "red"},
+    SpellBad = { underline= true, fg = "red"},
     Comment = { fg = "light_grey"}
   }
 }
