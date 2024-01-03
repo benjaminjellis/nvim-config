@@ -6,18 +6,12 @@ local plugins = {
     opts = {
       ensure_installed = {
         "rust-analyzer",
-        -- "marksman",
+        "marksman",
+        -- "ocaml-lsp",
+        -- "ocamlformat",
         -- "html-lsp"
       },
     },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      highlight = {
-        enable = false
-      }
-    }
   },
   {
     "nvim-neotest/neotest",
@@ -25,7 +19,6 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
       "rouge8/neotest-rust",
       "nvim-neotest/neotest-plenary",
       "folke/neodev.nvim"
