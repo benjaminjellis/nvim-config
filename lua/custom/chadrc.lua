@@ -8,6 +8,9 @@ M.ui = {
     Variable = { fg = "pink"},
     SpellBad = { underline= true, fg = "red"},
     Comment = { fg = "light_grey"}
+  },
+  nvdash = {
+    load_on_startup = true
   }
 }
 M.plugins = "custom.plugins"
