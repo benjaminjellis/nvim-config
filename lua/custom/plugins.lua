@@ -14,6 +14,22 @@ local plugins = {
     },
   },
   {
+    "davidmh/cspell.nvim",
+    lazy = false,
+    dependencies = {
+      "nvimtools/none-ls.nvim"
+    },
+    config = function()
+      local cspell = require('cspell');
+      require("null-ls").setup{
+        sources = {
+          cspell.diagnostics,
+          cspell.code_actions,
+        }
+      }
+    end,
+  },
+  {
     "nvim-neotest/neotest",
     lazy = false,
     dependencies = {

@@ -17,8 +17,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.wo.relativenumber = true
 vim.opt.swapfile = false
-vim.opt.spelllang = 'en_gb'
-vim.opt.spell = true
+-- vim.opt.spelllang = 'en_gb'
+-- vim.opt.spell = true
+-- vim.opt.spelloptions = "camel"
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
