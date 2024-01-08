@@ -21,10 +21,23 @@ local plugins = {
     },
     config = function()
       local cspell = require('cspell');
+      local config = {
+        find_json = function(_)
+          return "~/code/cspell/cspell.json"
+        end,
+      }
       require("null-ls").setup{
         sources = {
-          cspell.diagnostics,
-          cspell.code_actions,
+          cspell.diagnostics.with({
+            diagnostics_postprocess = function(diagnostic)
+              diagnostic.severity =  vim.diagnostic.severity["WARN"]
+            end,
+            config = {
+            }
+          }),
+          cspell.code_actions.with({
+            config
+          })
         }
       }
     end,
