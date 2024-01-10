@@ -3,6 +3,24 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<leader>ca"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "LSP code action",
+    },
+    ["[d"] = {
+      function()
+        vim.diagnostic.goto_prev { float = { border = "rounded" } }
+      end,
+      "Goto prev",
+    },
+    ["]d"] = {
+      function()
+        vim.diagnostic.goto_next { float = { border = "rounded" } }
+      end,
+      "Goto next",
+    },
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft <CR>", "window left" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "window right" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "window down" },
