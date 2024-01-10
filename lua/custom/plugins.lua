@@ -104,6 +104,10 @@ local plugins = {
     end
   },
   {
+    "rcarriga/nvim-dap-ui",
+    requires = {"mfussenegger/nvim-dap"}
+  },
+  {
     'saecki/crates.nvim',
     ft = {"toml"},
     config = function(_, opts)

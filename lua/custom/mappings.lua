@@ -62,12 +62,18 @@ M.dap = {
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
     ["<leader>dus"] = {
       function ()
-        local widgets = require('dap.ui.widgets');
-        local sidebar = widgets.sidebar(widgets.scopes);
-        sidebar.open();
+        require("dapui").setup();
+        require("dapui").open();
+      end,
+      "Open debugging sidebar"
+    },
+    ["<leader>dcs"] = {
+      function ()
+        require("dapui").close();
       end,
       "Open debugging sidebar"
     }
+
   }
 }
 
