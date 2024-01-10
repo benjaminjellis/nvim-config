@@ -5,8 +5,8 @@ M.ui = {
   theme = 'catppuccin',
   hl_override = {
     Operator = { fg = "vibrant_green" },
+    Identifier= {fg = "white"},
     Variable = { fg = "pink"},
-    SpellBad = { underline= true, fg = "red"},
     Comment = { fg = "light_grey"}
   },
   nvdash = {
@@ -15,4 +15,7 @@ M.ui = {
 }
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
+vim.wo.relativenumber = true
+vim.opt.swapfile = false
+
 return M

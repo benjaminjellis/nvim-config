@@ -7,7 +7,8 @@ M.general = {
     ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "window right" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "window down" },
     ["<C-k<"] = { "<cmd> TmuxNavigateUp <CR>", "winsow up" },
-    ["<leader>fo"] = { "<cmd> RustHoverActions <CR>" },
+    ["<leader>fo"] = { "<cmd> RustLsp hover actions <CR>", "show rust hover action" },
+    ["<leader>ee"] = { "<cmd> RustLsp explainError <CR>", "explain error" },
     ["<leader>ft"] = { "<cmd> Trouble <CR>", "Find trouble" },
     ["<leader>ta"] = {
       function()
@@ -21,6 +22,8 @@ M.general = {
       end,
       "test nearest"
     },
+
+
     ["<leader>to"] = {
       function()
         require("neotest").output_panel.open();
@@ -34,12 +37,6 @@ M.general = {
 }
 
 
-M.rtools = {
-  plugin = true,
-  n = {
-    ["<leader>fo"] = { "<cmd> RustHoverActions <CR>" }
-  }
-}
 
 M.dap = {
   plugin = true,
