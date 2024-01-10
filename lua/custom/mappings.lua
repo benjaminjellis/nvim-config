@@ -60,8 +60,33 @@ M.general = {
 M.dap = {
   plugin = true,
   n = {
+    ["<F5>"] = {
+      function ()
+        require("dap").continue()
+      end,
+      "Continue"
+    },
+    ["<F10>"] = {
+      function ()
+        require("dap").step_over()
+      end,
+      "Step over"
+    },
+     ["<F11>"] = {
+      function ()
+        require("dap").step_into()
+      end,
+      "Step into"
+    },
+     ["<F12>"] = {
+      function ()
+        require("dap").step_out()
+      end,
+      "Step out"
+    },
+
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
-    ["<leader>dus"] = {
+    ["<leader>dos"] = {
       function ()
         require("dapui").setup();
         require("dapui").open();
