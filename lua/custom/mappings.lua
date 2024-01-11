@@ -2,6 +2,34 @@ local M = {}
 
 M.general = {
   n = {
+    ["gD"] = {
+      function()
+        vim.lsp.buf.declaration()
+      end,
+      "LSP declaration",
+    },
+
+    ["gd"] = {
+      function()
+        vim.lsp.buf.definition()
+      end,
+      "LSP definition",
+    },
+
+    ["K"] = {
+      function()
+        vim.lsp.buf.hover()
+      end,
+      "LSP hover",
+    },
+
+    ["gi"] = {
+      function()
+        vim.lsp.buf.implementation()
+      end,
+      "LSP implementation",
+    },
+
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>ca"] = {
       function()
