@@ -171,14 +171,12 @@ M.lspconfig = {
       end,
       "LSP definition type",
     },
-
     ["<leader>ra"] = {
       function()
         require("nvchad.renamer").open()
       end,
       "LSP rename",
     },
-
     ["<leader>ca"] = {
       function()
         vim.lsp.buf.code_action()

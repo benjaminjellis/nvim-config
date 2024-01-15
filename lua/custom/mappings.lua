@@ -16,20 +16,24 @@ M.general = {
       "LSP definition",
     },
 
+    ["<leader>ra"] = {
+      function()
+        require("nvchad.renamer").open()
+      end,
+      "LSP rename",
+    },
     ["K"] = {
       function()
         vim.lsp.buf.hover()
       end,
       "LSP hover",
     },
-
     ["gi"] = {
       function()
         vim.lsp.buf.implementation()
       end,
       "LSP implementation",
     },
-
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>ca"] = {
       function()
