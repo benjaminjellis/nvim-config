@@ -10,14 +10,14 @@ local options = {
       alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
       -- signs = false, -- configure signs for some keywords individually
     },
-  -- TODO = { icon = " ", color = "info" },
+    -- TODO = { icon = " ", color = "info" },
     -- TODO = { icon = "󰢌 ", color = "todos" },
     TODO = { icon = "󰮱 ", color = "todo" },
     HACK = { icon = " ", color = "warning" },
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "FAILED" } },
---    PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+    --    PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
---    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    --    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
     NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
     TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "SUCCESS", "CORRECT" } },
   },
@@ -42,19 +42,19 @@ local options = {
     comments_only = true, -- uses treesitter to match keywords in comments only
     max_line_len = 400, -- ignore lines longer than this
     exclude = {
-        "TelescopePrompt",
-        "TelescopeResults",
-        "help",
-        "lazy",
-        "lspinfo",
-        "mason",
-        "nvcheatsheet",
-        "nvdash",
-        "terminal",
-        'nerdtree',
-        'unite',
-        'OverseerForm',
-        'OverseerList',
+      "TelescopePrompt",
+      "TelescopeResults",
+      "help",
+      "lazy",
+      "lspinfo",
+      "mason",
+      "nvcheatsheet",
+      "nvdash",
+      "terminal",
+      "nerdtree",
+      "unite",
+      "OverseerForm",
+      "OverseerList",
     }, -- list of file types to exclude highlighting TODO fill
     throttle = 200,
   },
@@ -73,7 +73,7 @@ local options = {
     -- test = { "Identifier", "#FF00FF" },
     test = { theme30.green },
     -- todo = { "#ff00ff" }
-    todo = { theme30.purple }
+    todo = { theme30.purple },
   },
   search = {
     command = "rg",
@@ -89,7 +89,6 @@ local options = {
     -- pattern = [[\b(KEYWORDS):]], -- ripgrep regex
     pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
   },
-
 }
 
 return options

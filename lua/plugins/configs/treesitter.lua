@@ -3,7 +3,6 @@ local options = {
 
   highlight = {
     use_languagetree = true,
-
   },
 
   indent = { enable = true },

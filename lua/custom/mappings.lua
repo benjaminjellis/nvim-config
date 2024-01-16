@@ -22,18 +22,21 @@ M.general = {
       end,
       "LSP rename",
     },
+
     ["K"] = {
       function()
         vim.lsp.buf.hover()
       end,
       "LSP hover",
     },
+
     ["gi"] = {
       function()
         vim.lsp.buf.implementation()
       end,
       "LSP implementation",
     },
+
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>ca"] = {
       function()
@@ -41,12 +44,14 @@ M.general = {
       end,
       "LSP code action",
     },
+
     ["[d"] = {
       function()
         vim.diagnostic.goto_prev { float = { border = "rounded" } }
       end,
       "Goto prev",
     },
+
     ["]d"] = {
       function()
         vim.diagnostic.goto_next { float = { border = "rounded" } }
@@ -58,94 +63,103 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "window down" },
     ["<C-k<"] = { "<cmd> TmuxNavigateUp <CR>", "winsow up" },
     ["<leader>fo"] = { "<cmd> RustLsp hover actions <CR>", "show rust hover action" },
-    ["<leader>dbs"] = {"<cmd> RustLsp debuggables <CR>", "start debugger"},
+    ["<leader>dbs"] = { "<cmd> RustLsp debuggables <CR>", "start debugger" },
     ["<leader>ee"] = { "<cmd> RustLsp explainError <CR>", "explain error" },
     ["<leader>ft"] = { "<cmd> Trouble <CR>", "Find trouble" },
     ["<leader>ta"] = {
       function()
-        require("neotest").run.run(vim.fn.expand("%"));
+        require("neotest").run.run(vim.fn.expand "%")
       end,
-      "test all in this file"
+      "test all in this file",
     },
     ["<leader>tn"] = {
       function()
-        require("neotest").run.run();
+        require("neotest").run.run()
       end,
-      "test nearest"
+      "test nearest",
     },
-
 
     ["<leader>to"] = {
       function()
-        require("neotest").output_panel.open();
+        require("neotest").output_panel.open()
       end,
-      "show test output"
-    }
+      "show test output",
+    },
+
+    ["]t"] = {
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      "Next todo comment",
+    },
+
+    ["[t"] = {
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      "Previous todo comment",
+    },
   },
   t = {
     ["<leader>tc"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
   },
 }
 
-
-
 M.dap = {
   plugin = true,
   n = {
     ["<F5>"] = {
-      function ()
+      function()
         require("dap").continue()
       end,
-      "Continue"
+      "Continue",
     },
     ["<F10>"] = {
-      function ()
+      function()
         require("dap").step_over()
       end,
-      "Step over"
+      "Step over",
     },
-     ["<F11>"] = {
-      function ()
+    ["<F11>"] = {
+      function()
         require("dap").step_into()
       end,
-      "Step into"
+      "Step into",
     },
-     ["<F12>"] = {
-      function ()
+    ["<F12>"] = {
+      function()
         require("dap").step_out()
       end,
-      "Step out"
+      "Step out",
     },
 
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
     ["<leader>dos"] = {
-      function ()
-        require("dapui").setup();
-        require("dapui").open();
+      function()
+        require("dapui").setup()
+        require("dapui").open()
       end,
-      "Open debugging sidebar"
+      "Open debugging sidebar",
     },
     ["<leader>dcs"] = {
-      function ()
-        require("dapui").close();
+      function()
+        require("dapui").close()
       end,
-      "Close debugging sidebar"
-    }
-
-  }
+      "Close debugging sidebar",
+    },
+  },
 }
-
 
 M.crates = {
   plugin = true,
   n = {
     ["<leader>rcu"] = {
-      function ()
-        require('crates').upgrade_all_crates()
+      function()
+        require("crates").upgrade_all_crates()
       end,
-      "update crates"
-    }
-  }
+      "update crates",
+    },
+  },
 }
 
 return M

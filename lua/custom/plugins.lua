@@ -7,10 +7,7 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "marksman",
-        "codelldb"
-        -- "ocaml-lsp",
-        -- "ocamlformat",
-        -- "html-lsp"
+        "codelldb",
       },
     },
   },
@@ -18,19 +15,19 @@ local plugins = {
     "davidmh/cspell.nvim",
     lazy = false,
     dependencies = {
-      "nvimtools/none-ls.nvim"
+      "nvimtools/none-ls.nvim",
     },
     config = function()
-      local cspell = require('cspell');
-      require("null-ls").setup{
+      local cspell = require "cspell"
+      require("null-ls").setup {
         sources = {
-          cspell.diagnostics.with({
+          cspell.diagnostics.with {
             diagnostics_postprocess = function(diagnostic)
-              diagnostic.severity =  vim.diagnostic.severity["WARN"]
+              diagnostic.severity = vim.diagnostic.severity["WARN"]
             end,
-          }),
-          cspell.code_actions
-        }
+          },
+          cspell.code_actions,
+        },
       }
     end,
   },
@@ -42,28 +39,29 @@ local plugins = {
       "antoinemadec/FixCursorHold.nvim",
       "rouge8/neotest-rust",
       "nvim-neotest/neotest-plenary",
-      "folke/neodev.nvim"
-     },
+      "folke/neodev.nvim",
+    },
     config = function()
-      require("neotest").setup({
+      require("neotest").setup {
         adapters = {
-          require("neotest-rust"),
-          require("neotest-plenary"),
-       },
-      })
-      require("neodev").setup({
+          require "neotest-rust",
+          require "neotest-plenary",
+        },
+      }
+      require("neodev").setup {
         library = { plugins = { "neotest" }, types = true },
-      })
+      }
     end,
   },
   {
-  "folke/todo-comments.nvim",
+    "folke/todo-comments.nvim",
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
   },
   {
     "christoomey/vim-tmux-navigator",
-    lazy = false
+    lazy = false,
   },
   {
     "neovim/nvim-lspconfig",
@@ -76,63 +74,54 @@ local plugins = {
     "folke/trouble.nvim",
     ft = "rust",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-   },
+    opts = {},
   },
   {
-    'mrcjkb/rustaceanvim',
-    version = '^3', -- Recommended
-    ft = { 'rust' },
+    "mrcjkb/rustaceanvim",
+    version = "^3", -- Recommended
+    ft = { "rust" },
     init = function()
-      -- Configure rustaceanvim here
       vim.g.rustaceanvim = {
-        on_attach = function(client, bufnr)
-          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev);
-          vim.keymap.set('n', ']d', vim.diagnostic.goto_next);
-      -- you can also put keymaps in here
-        end,
+        on_attach = function(_, _) end,
       }
     end,
   },
   {
     "mfussenegger/nvim-dap",
     init = function()
-      require("core.utils").load_mappings("dap")
-    end
+      require("core.utils").load_mappings "dap"
+    end,
   },
   {
     "rcarriga/nvim-dap-ui",
-    requires = {"mfussenegger/nvim-dap"}
+    requires = { "mfussenegger/nvim-dap" },
   },
   {
-    'saecki/crates.nvim',
-    ft = {"toml"},
+    "saecki/crates.nvim",
+    ft = { "toml" },
     config = function(_, opts)
-      local crates  = require('crates')
+      local crates = require "crates"
       crates.setup(opts)
-      require('cmp').setup.buffer({
-        sources = { { name = "crates" }}
-      })
+      require("cmp").setup.buffer {
+        sources = { { name = "crates" } },
+      }
       crates.show()
-      require("core.utils").load_mappings("crates")
+      require("core.utils").load_mappings "crates"
     end,
   },
   {
     "rust-lang/rust.vim",
     ft = "rust",
-    init = function ()
+    init = function()
       vim.g.rustfmt_autosave = 1
-    end
+    end,
   },
   {
     "theHamsta/nvim-dap-virtual-text",
     lazy = false,
-    config = function(_, opts)
+    config = function(_, _)
       require("nvim-dap-virtual-text").setup()
-    end
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -143,9 +132,9 @@ local plugins = {
         behavior = cmp.ConfirmBehavior.Insert,
         select = false,
       }
-      table.insert(M.sources, {name = "crates"})
+      table.insert(M.sources, { name = "crates" })
       return M
     end,
-  }
+  },
 }
 return plugins
