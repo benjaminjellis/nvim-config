@@ -7,29 +7,14 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "marksman",
-        "codelldb"
+        "codelldb",
       },
     },
   },
   {
-    "davidmh/cspell.nvim",
+    "kamykn/spelunker.vim",
     lazy = false,
-    dependencies = {
-      "nvimtools/none-ls.nvim",
-    },
-    config = function()
-      local cspell = require "cspell"
-      require("null-ls").setup {
-        sources = {
-          cspell.diagnostics.with {
-            diagnostics_postprocess = function(diagnostic)
-              diagnostic.severity = vim.diagnostic.severity["WARN"]
-            end,
-          },
-          cspell.code_actions,
-        },
-      }
-    end,
+    dependencies = { "kamykn/popup-menu.nvim" },
   },
   {
     "nvim-neotest/neotest",

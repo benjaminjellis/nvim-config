@@ -1,6 +1,5 @@
-require("lspconfig").ocamllsp.setup{
-    on_attach = function(client, _)
-      client.server_capabilities.semanticTokensProvider = nil
-    end
-
-};
+require("lspconfig").ocamllsp.setup {
+  on_attach = function(client, _)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+}
