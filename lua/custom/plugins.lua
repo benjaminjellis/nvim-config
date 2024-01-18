@@ -7,7 +7,7 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "marksman",
-        "codelldb",
+        "codelldb"
       },
     },
   },
@@ -94,7 +94,7 @@ local plugins = {
   },
   {
     "rcarriga/nvim-dap-ui",
-    requires = { "mfussenegger/nvim-dap" },
+    dependencies = { "mfussenegger/nvim-dap" },
   },
   {
     "saecki/crates.nvim",

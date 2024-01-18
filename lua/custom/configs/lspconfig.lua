@@ -1,5 +1,6 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+require("lspconfig").ocamllsp.setup{
+    on_attach = function(client, _)
+      client.server_capabilities.semanticTokensProvider = nil
+    end
 
-local lspconfig = require "lspconfig"
-local util = require "lspconfig/util"
+};
