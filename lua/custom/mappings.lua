@@ -37,6 +37,8 @@ M.general = {
       "LSP implementation",
     },
 
+    ["]s"] = { "ZN" },
+
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>ca"] = {
       function()

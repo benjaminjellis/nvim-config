@@ -8,13 +8,13 @@ local plugins = {
         "rust-analyzer",
         "marksman",
         "codelldb",
+        "kotlin-language-serve",
       },
     },
   },
   {
     "kamykn/spelunker.vim",
     lazy = false,
-    dependencies = { "kamykn/popup-menu.nvim" },
   },
   {
     "nvim-neotest/neotest",
