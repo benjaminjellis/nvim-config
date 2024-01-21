@@ -22,6 +22,31 @@ M.general = {
       end,
       "LSP rename",
     },
+    -- spelling mappings
+    ["<leader>sn"] = {
+      function()
+        vim.fn['spelunker#jump_next']()
+      end,
+      "Next spelling"
+    },
+    ["<leader>sp"] = {
+      function()
+        vim.fn['spelunker#jump_prev']()
+      end,
+      "Previous spelling"
+    },
+    ["<leader>sg"] = {
+      function()
+        vim.fn['spelunker#check']()
+      end,
+      "Add word to spell list"
+    },
+    ["<leader>sl"] = {
+      function()
+        vim.fn['spelunker#correct_from_list']()
+      end,
+      "Show spelling suggestions"
+    },
 
     ["K"] = {
       function()
