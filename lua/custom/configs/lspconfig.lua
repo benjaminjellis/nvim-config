@@ -6,8 +6,4 @@ lspconfig.ocamllsp.setup {
   end,
 }
 
-lspconfig.kotlin_language_server.setup {
-  on_attach = function(client, _)
-    client.server_capabilities.semanticTokensProvider = nil
-  end,
-}
+lspconfig.kotlin_language_server.setup {}

@@ -81,7 +81,8 @@ local plugins = {
     dependencies = { "mfussenegger/nvim-dap" },
   },
   {
-    "udalov/kotlin-vim"
+    "udalov/kotlin-vim",
+    ft = { "kotlin" },
   },
   {
     "saecki/crates.nvim",

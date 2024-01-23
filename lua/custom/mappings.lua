@@ -25,27 +25,27 @@ M.general = {
     -- spelling mappings
     ["<leader>sn"] = {
       function()
-        vim.fn['spelunker#jump_next']()
+        vim.fn["spelunker#jump_next"]()
       end,
-      "Next spelling"
+      "Next spelling",
     },
     ["<leader>sp"] = {
       function()
-        vim.fn['spelunker#jump_prev']()
+        vim.fn["spelunker#jump_prev"]()
       end,
-      "Previous spelling"
+      "Previous spelling",
     },
     ["<leader>sg"] = {
       function()
-        vim.fn['spelunker#check']()
+        vim.fn["spelunker#check"]()
       end,
-      "Add word to spell list"
+      "Add word to spell list",
     },
     ["<leader>sl"] = {
       function()
-        vim.fn['spelunker#correct_from_list']()
+        vim.fn["spelunker#correct_from_list"]()
       end,
-      "Show spelling suggestions"
+      "Show spelling suggestions",
     },
 
     ["K"] = {
