@@ -18,7 +18,6 @@ local plugins = {
   },
   {
     "nvim-neotest/neotest",
-    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
@@ -80,6 +79,9 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap" },
+  },
+  {
+    "udalov/kotlin-vim"
   },
   {
     "saecki/crates.nvim",
