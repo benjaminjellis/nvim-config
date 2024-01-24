@@ -39,7 +39,7 @@ local plugins = {
   },
   {
     "folke/todo-comments.nvim",
-    lazy = false,
+    -- lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
@@ -79,23 +79,6 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap" },
-  },
-  {
-    "udalov/kotlin-vim",
-    ft = { "kotlin" },
-  },
-  {
-    "saecki/crates.nvim",
-    ft = { "toml" },
-    config = function(_, opts)
-      local crates = require "crates"
-      crates.setup(opts)
-      require("cmp").setup.buffer {
-        sources = { { name = "crates" } },
-      }
-      crates.show()
-      require("core.utils").load_mappings "crates"
-    end,
   },
   {
     "rust-lang/rust.vim",

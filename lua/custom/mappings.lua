@@ -62,8 +62,6 @@ M.general = {
       "LSP implementation",
     },
 
-    ["]s"] = { "ZN" },
-
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>ca"] = {
       function()
@@ -93,12 +91,14 @@ M.general = {
     ["<leader>dbs"] = { "<cmd> RustLsp debuggables <CR>", "start debugger" },
     ["<leader>ee"] = { "<cmd> RustLsp explainError <CR>", "explain error" },
     ["<leader>ft"] = { "<cmd> Trouble <CR>", "Find trouble" },
+
     ["<leader>ta"] = {
       function()
         require("neotest").run.run(vim.fn.expand "%")
       end,
       "test all in this file",
     },
+
     ["<leader>tn"] = {
       function()
         require("neotest").run.run()
@@ -128,7 +128,8 @@ M.general = {
     },
   },
   t = {
-    ["<leader>tc"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+    ["<leader>tc"] = {
+      vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
   },
 }
 
@@ -159,7 +160,6 @@ M.dap = {
       end,
       "Step out",
     },
-
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
     ["<leader>dos"] = {
       function()
@@ -173,18 +173,6 @@ M.dap = {
         require("dapui").close()
       end,
       "Close debugging sidebar",
-    },
-  },
-}
-
-M.crates = {
-  plugin = true,
-  n = {
-    ["<leader>rcu"] = {
-      function()
-        require("crates").upgrade_all_crates()
-      end,
-      "update crates",
     },
   },
 }
