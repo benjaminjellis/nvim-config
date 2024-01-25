@@ -9,6 +9,11 @@ M.general = {
       "LSP declaration",
     },
 
+    ["<leader>cb"] = {
+      "<cmd>%bd|e#<cr>",
+      "Close all buffers"
+    },
+
     ["gd"] = {
       function()
         vim.lsp.buf.definition()
