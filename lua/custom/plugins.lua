@@ -56,7 +56,7 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
-    ft = "rust",
+    lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
