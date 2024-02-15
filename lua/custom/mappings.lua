@@ -94,7 +94,7 @@ M.general = {
     ["<C-k<"] = { "<cmd> TmuxNavigateUp <CR>", "winsow up" },
     ["<leader>fo"] = { "<cmd> RustLsp hover actions <CR>", "show rust hover action" },
     ["<leader>dbs"] = { "<cmd> RustLsp debuggables <CR>", "start debugger" },
-    ["<leader>ee"] = { "<cmd> RustLsp explainError <CR>", "explain error" },
+    ["<leader>fee"] = { "<cmd> RustLsp explainError <CR>", "explain error" },
     ["<leader>ft"] = { "<cmd> Trouble <CR>", "Find trouble" },
 
     ["<leader>ta"] = {
