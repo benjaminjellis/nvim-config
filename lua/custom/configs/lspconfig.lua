@@ -5,6 +5,6 @@ lspconfig.ocamllsp.setup {
     client.server_capabilities.semanticTokensProvider = nil
   end,
 }
-lspconfig.josnls.setup {}
+lspconfig.jsonls.setup {}
 --
 -- lspconfig.kotlin_language_server.setup {}
