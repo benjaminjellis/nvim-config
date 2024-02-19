@@ -7,8 +7,9 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "marksman",
+        "json-lsp",
         "codelldb",
-        "kotlin-language-serve",
+        "kotlin-language-server",
       },
     },
   },
