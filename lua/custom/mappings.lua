@@ -52,6 +52,14 @@ M.general = {
       end,
       "Show spelling suggestions",
     },
+    ["<leader>gdc"] = {
+      "<cmd> DiffviewClose <cr>",
+      "Git diff open"
+    },
+    ["<leader>gdo"] = {
+      "<cmd> DiffviewOpen <CR>",
+      "Git diff open"
+    },
 
     ["K"] = {
       function()
@@ -96,6 +104,7 @@ M.general = {
     ["<leader>dbs"] = { "<cmd> RustLsp debuggables <CR>", "start debugger" },
     ["<leader>fee"] = { "<cmd> RustLsp explainError <CR>", "explain error" },
     ["<leader>ft"] = { "<cmd> Trouble <CR>", "Find trouble" },
+    ["<leader>ct"] = { "<cmd> TroubleClose <CR>", "Close trouble" },
 
     ["<leader>ta"] = {
       function()

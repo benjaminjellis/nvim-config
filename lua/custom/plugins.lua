@@ -1,17 +1,28 @@
-local cmp = require "cmp"
-
 local plugins = {
   {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "rust-analyzer",
         "marksman",
         "json-lsp",
         "codelldb",
-        "kotlin-language-server",
       },
     },
+  },
+  { 'gen740/SmoothCursor.nvim',
+  lazy = false,
+  config = function()
+    require('smoothcursor').setup()
+  end
+  },
+  {
+    "sindrets/diffview.nvim",
+    lazy = false
+  },
+  {
+  'mrcjkb/haskell-tools.nvim',
+  version = '^3', -- Recommended
+  ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
   },
   {
     "kamykn/spelunker.vim",
@@ -63,7 +74,7 @@ local plugins = {
   },
   {
     "mrcjkb/rustaceanvim",
-    version = "^3", -- Recommended
+    version = "4.11.0", -- Recommended
     ft = { "rust" },
     init = function()
       vim.g.rustaceanvim = {
@@ -95,18 +106,18 @@ local plugins = {
       require("nvim-dap-virtual-text").setup()
     end,
   },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function()
-      local M = require "plugins.configs.cmp"
-      M.completion.completeopt = "menu,menuone,noselect"
-      M.mapping["<CR>"] = cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = false,
-      }
-      table.insert(M.sources, { name = "crates" })
-      return M
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   opts = function()
+  --     local M = require "plugins.configs.cmp"
+  --     M.completion.completeopt = "menu,menuone,noselect"
+  --     M.mapping["<CR>"] = cmp.mapping.confirm {
+  --       behavior = cmp.ConfirmBehavior.Insert,
+  --       select = false,
+  --     }
+  --     table.insert(M.sources, { name = "crates" })
+  --     return M
+  --   end,
+  -- },
 }
 return plugins

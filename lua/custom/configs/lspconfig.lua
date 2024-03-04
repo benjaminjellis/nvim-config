@@ -12,3 +12,4 @@ lspconfig.jsonls.setup {}
 
 -- metals is the lsp for scala, this needs to be installed to work 
 lspconfig.metals.setup {}
+
