@@ -10,14 +10,27 @@ local plugins = {
     },
   },
   { 'gen740/SmoothCursor.nvim',
-  lazy = false,
-  config = function()
-    require('smoothcursor').setup()
-  end
+    lazy = false,
+    config = function()
+      require('smoothcursor').setup()
+    end
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+    		"LazyGit",
+    		"LazyGitConfig",
+    		"LazyGitCurrentFile",
+    		"LazyGitFilter",
+    		"LazyGitFilterCurrentFile",
+    }
   },
   {
     "sindrets/diffview.nvim",
-    lazy = false
+    cmd = {
+      "DiffviewClose",
+      "DiffviewOpen",
+    }
   },
   {
   'mrcjkb/haskell-tools.nvim',
@@ -68,8 +81,10 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
-    lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = {
+      "Trouble"
+    },
     opts = {},
   },
   {
@@ -105,19 +120,6 @@ local plugins = {
     config = function(_, _)
       require("nvim-dap-virtual-text").setup()
     end,
-  },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = function()
-  --     local M = require "plugins.configs.cmp"
-  --     M.completion.completeopt = "menu,menuone,noselect"
-  --     M.mapping["<CR>"] = cmp.mapping.confirm {
-  --       behavior = cmp.ConfirmBehavior.Insert,
-  --       select = false,
-  --     }
-  --     table.insert(M.sources, { name = "crates" })
-  --     return M
-  --   end,
-  -- },
+  }
 }
 return plugins

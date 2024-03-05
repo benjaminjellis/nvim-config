@@ -52,13 +52,19 @@ M.general = {
       end,
       "Show spelling suggestions",
     },
+
+    -- git tools
     ["<leader>gdc"] = {
       "<cmd> DiffviewClose <cr>",
-      "Git diff open"
+      "Git diff close"
     },
     ["<leader>gdo"] = {
       "<cmd> DiffviewOpen <CR>",
       "Git diff open"
+    },
+    ["<leader>lg"] = {
+      "<cmd> LazyGit <CR>",
+      "Open lazy git"
     },
 
     ["K"] = {
