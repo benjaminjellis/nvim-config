@@ -33,15 +33,15 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
-      "rouge8/neotest-rust",
+      "mrcjkb/rustaceanvim",
       "nvim-neotest/neotest-plenary",
       "folke/neodev.nvim",
     },
     config = function()
       require("neotest").setup {
         adapters = {
-          require "neotest-rust",
           require "neotest-plenary",
+          require('rustaceanvim.neotest'),
         },
       }
       require("neodev").setup {
@@ -74,7 +74,7 @@ local plugins = {
   },
   {
     "mrcjkb/rustaceanvim",
-    version = "4.11.0", -- Recommended
+    version = "4.11.1",
     ft = { "rust" },
     init = function()
       vim.g.rustaceanvim = {
