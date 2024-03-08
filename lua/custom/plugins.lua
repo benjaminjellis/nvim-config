@@ -3,8 +3,10 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "pyright",
         "marksman",
         "json-lsp",
+        "yaml-language-server",
         "codelldb",
       },
     },

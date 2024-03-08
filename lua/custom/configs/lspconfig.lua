@@ -9,7 +9,6 @@ lspconfig.ocamllsp.setup {
 
 -- json lsp for formatting json
 lspconfig.jsonls.setup {}
+lspconfig.pyright.setup {}
 
--- metals is the lsp for scala, this needs to be installed to work 
-lspconfig.metals.setup {}
 

@@ -88,6 +88,12 @@ M.general = {
       end,
       "LSP code action",
     },
+    ["<leader>rd"] = {
+      "<cmd> RustLsp renderDiagnostic <CR>",
+      "Open lazy git"
+    },
+
+
 
     ["[d"] = {
       function()

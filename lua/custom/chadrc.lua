@@ -14,9 +14,6 @@ M.ui = {
 vim.g.rustaceanvim = {
   tools = {},
   server = {
-    on_attach = function(client, _)
-      client.server_capabilities.semanticTokensProvider = nil
-    end,
     settings = {
       ["rust-analyzer"] = {},
     },
@@ -27,4 +24,5 @@ M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 vim.wo.relativenumber = true
 vim.opt.swapfile = false
+
 return M
