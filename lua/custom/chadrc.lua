@@ -14,12 +14,25 @@ M.ui = {
 vim.g.rustaceanvim = {
   tools = {},
   server = {
+    on_attach = function(client, _)
+      client.server_capabilities.semanticTokensProvider = nil
+    end,
     settings = {
       ["rust-analyzer"] = {},
     },
   },
   dap = {},
 }
+
+vim.g.haskell_tools = {
+  hls = {
+    on_attach = function(client, _, _)
+      client.server_capabilities.semanticTokensProvider = nil
+    end,
+    -- ...
+  },
+}
+
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 vim.wo.relativenumber = true

@@ -10,5 +10,5 @@ lspconfig.ocamllsp.setup {
 -- json lsp for formatting json
 lspconfig.jsonls.setup {}
 lspconfig.pyright.setup {}
-
-
+lspconfig.yamlls.setup {}
+lspconfig.gleam.setup {}

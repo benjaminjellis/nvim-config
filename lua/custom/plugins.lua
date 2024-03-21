@@ -11,6 +11,11 @@ local plugins = {
       },
     },
   },
+  {
+    "gleam-lang/gleam.vim",
+    ft = "gleam"
+
+  },
   { 'gen740/SmoothCursor.nvim',
     lazy = false,
     config = function()
