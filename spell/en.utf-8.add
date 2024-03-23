@@ -7,3 +7,9 @@ eymaps
 ocaml
 treesitter
 treesitter
+lspconfig
+mapbox
+geojson
+isochrone
+reqwest
+geoms
