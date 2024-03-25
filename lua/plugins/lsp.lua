@@ -1,5 +1,9 @@
 return {
   {
+    "gleam-lang/gleam.vim",
+  },
+  { "Saecki/crates.nvim", enabled = false },
+  {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
