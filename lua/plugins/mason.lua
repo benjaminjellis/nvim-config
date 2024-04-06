@@ -4,8 +4,8 @@ return {
     opts = {
       ensure_installed = {
         "codelldb",
-        "pyright",
         "marksman",
+        "pyright",
         "json-lsp",
         "yaml-language-server",
       },
