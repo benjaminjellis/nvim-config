@@ -1,1 +1,1 @@
-My nvim config with support for Rust, Haskell, OCaml and Python
+My nvim config with support for Rust, Haskell and Python
